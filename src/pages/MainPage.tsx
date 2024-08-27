@@ -1,5 +1,12 @@
+import React from "react";
+
 const MainPage = () => {
-  return <div>app</div>;
+  return (
+    <div>
+      <header>
+      </header>
+    </div>
+  );
 };
 
 export default MainPage;
