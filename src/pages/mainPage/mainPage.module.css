@@ -55,6 +55,7 @@ body {
   margin-bottom: 15px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 #signUp {
@@ -68,10 +69,19 @@ body {
   color: #fff;
   letter-spacing: 2px;
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+#signIn:hover {
+    background-color: #a68604;
+}
+
+#signUp:hover {
+    background-color: #de5302;
 }
 
 .image {
   z-index: 2;
-  width: 370px;
-  margin-top: -20px;
+  width: 270px;
+  margin-top: 13px;
 }
