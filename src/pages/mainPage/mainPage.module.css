@@ -1,13 +1,11 @@
-body {
-  background-color: #fff1e1;
-}
-
 .main_block {
   width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background-color: #fff4dd;
+  height: 100vh;
 }
 
 .top {
@@ -73,11 +71,11 @@ body {
 }
 
 #signIn:hover {
-    background-color: #a68604;
+  background-color: #a68604;
 }
 
 #signUp:hover {
-    background-color: #de5302;
+  background-color: #de5302;
 }
 
 .image {
