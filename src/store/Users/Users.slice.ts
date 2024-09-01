@@ -14,7 +14,6 @@ export const usersSlice = createSlice({
   initialState: INIT_STATE,
   reducers: {},
   extraReducers: (builder) => {
-    builder
   },
 });
 
