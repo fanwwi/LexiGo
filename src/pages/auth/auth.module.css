@@ -55,7 +55,8 @@
 
 .btn {
   background-color: #FEBD54;
-  width: 200px;
+  max-width: 300px;
+  width: auto;
   height: 35px;
   border: none;
   border-radius: 20px;
@@ -64,6 +65,7 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
+  padding: 10px;
 }
 
 .btn:hover {
@@ -79,7 +81,8 @@
   border-radius: 10px;
   outline: none;
   border: 2px solid #fff;
+  color: #000;
 }
 .selectLang {
-  max-width: 100px;
+  max-width: 150px;
 }

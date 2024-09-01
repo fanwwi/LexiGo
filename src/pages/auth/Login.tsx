@@ -6,7 +6,6 @@ import { useTranslation } from "react-i18next";
 
 const Login = () => {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language") || "en";
