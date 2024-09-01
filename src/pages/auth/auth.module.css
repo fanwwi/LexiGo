@@ -1,5 +1,5 @@
 .auth {
-  width: 320px;
+  max-width: 500px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -49,12 +49,12 @@
   gap: 5px;
 }
 
-.p p {
+.p a {
   text-decoration: underline;
 }
 
 .btn {
-  background-color: #ffcc00;
+  background-color: #FEBD54;
   width: 200px;
   height: 35px;
   border: none;
@@ -67,7 +67,7 @@
 }
 
 .btn:hover {
-  background-color: #a68604;
+  background-color: #ffd736;
 }
 
 .auth select {
@@ -79,4 +79,7 @@
   border-radius: 10px;
   outline: none;
   border: 2px solid #fff;
+}
+.selectLang {
+  max-width: 150px;
 }

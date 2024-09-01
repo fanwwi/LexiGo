@@ -1,0 +1,13 @@
+{
+  "get_started": "शुरू करें",
+  "email": "ईमेल",
+  "password": "पासवर्ड",
+  "confirm_password": "पासवर्ड की पुष्टि करें",
+  "have_account": "क्या आपके पास खाता है?",
+  "login": "खाते में लॉग इन करें",
+  "sign_up": "साइन अप करें",
+  "already_started": "क्या आपने शुरुआत कर दी है?",
+  "haven_t_started_yet": "अभी तक शुरू नहीं किया?",
+  "create_account": "खाता बनाएं",
+  "sign_in": "साइन इन करें"
+}

@@ -1,0 +1,46 @@
+.cont {
+    margin-left: auto;
+    max-width: 500px;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+
+.error {
+    font-size: 40px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.title {
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.text {
+    max-width: 300px;
+    margin-left: 20px;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #898989;
+    text-align: center;
+}
+
+.coffe {
+    max-width: 270px;
+    object-fit: cover;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.Link {
+    font-weight: 700;
+    font-size: 14px;
+    padding: 3px;
+    background-color: #FEA792;
+    color: #fff;
+    border-radius: 4px;
+    margin-top: 25px;
+}

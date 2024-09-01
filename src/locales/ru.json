@@ -1,0 +1,14 @@
+{
+    "get_started": "Начать",
+    "email": "Электронная почта",
+    "password": "Пароль",
+    "confirm_password": "Подтвердите пароль",
+    "have_account": "Есть аккаунт?",
+    "login": "Войти в аккаунт",
+    "sign_up": "Зарегистрироваться",
+    "already_started": "Уже начали?",
+    "haven_t_started_yet": "Еще не начали?",
+    "create_account": "Создать аккаунт",
+    "sign_in": "Войти"
+  }
+  

@@ -1,36 +1,43 @@
 import React from "react";
 import styles from "../auth/auth.module.css";
 import getstarted from "../../img/getstarted.png";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Register = () => {
-  const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLanguage = event.target.value;
+    i18n.changeLanguage(newLanguage);
+    localStorage.setItem("language", newLanguage); // Сохраняем язык в localStorage
+  };
+
   return (
     <div className={styles.auth}>
-      <h1>get started</h1>
+      <h1>{t("get_started")}</h1>
       <img src={getstarted} alt="" />
       <form className={styles.form}>
-        <input type="email" className={styles.input} placeholder="Email" />
+        <input type="email" className={styles.input} placeholder={t("email")} />
         <input
           type="password"
           className={styles.input}
-          placeholder="Password"
+          placeholder={t("password")}
         />
         <input
           type="password"
           className={styles.input}
-          placeholder="Confirm the password"
+          placeholder={t("confirm_password")}
         />
-        <select>  
-          <option value="">English</option>
-          <option value="">Russian</option>
-          <option value="">हिंदी</option>
+        <select onChange={changeLanguage} defaultValue={i18n.language}>
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+          <option value="hi">हिंदी</option>
         </select>
         <p className={styles.p}>
-          Have account?{" "}
-          <p onClick={() => navigate("/log/account/")}>Log into the account</p>
+          {t("have_account")} <Link to={"/login"}>{t("login")}</Link>
         </p>
-        <button className={styles.btn}>Sign Up</button>
+        <button className={styles.btn}>{t("sign_up")}</button>
       </form>
     </div>
   );
