@@ -1,6 +1,5 @@
-import React from "react";
 import styles from "./auth.module.css";
-import getstarted from "../../img/getstarted.png";
+import getstarted from "../../img/getstarted.png"
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../auth/auth.module.css";
 import getstarted from "../../img/getstarted.png";
 import { useNavigate } from "react-router-dom";
