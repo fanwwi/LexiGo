@@ -1,0 +1,25 @@
+.menu {
+    background-color: #121F25;
+    padding: 10px;
+}
+  
+  .flag {
+    max-width: 55px;
+    height: 40px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid white;
+    object-fit: cover;
+  }
+  
+  .health {
+    color: #FD0100;
+    font-weight: 700;
+  }
+
+  .headerRigth {
+    display: flex;
+    align-self: center;
+    gap: 8px;
+    align-items: center;
+  }

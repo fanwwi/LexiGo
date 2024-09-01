@@ -37,11 +37,18 @@ const StarterPage = () => {
             {t('create_account')}
           </button>
         </Link>
-        <select onChange={changeLanguage} defaultValue={i18n.language}  className={styles.selectLang}>
-          <option value="en">English</option>
-          <option value="ru">Русский</option>
-          <option value="hi">हिंदी</option>
-        </select>
+        <select
+        onChange={changeLanguage}
+        defaultValue={i18n.language}
+        className={styles.selectLang}
+      >
+        <option value="" disabled>
+          Choose your language
+        </option>
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        <option value="hi">हिंदी</option>
+      </select>
       </div>
     </div>
   );
