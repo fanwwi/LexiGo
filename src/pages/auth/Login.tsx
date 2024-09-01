@@ -9,14 +9,14 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("language") || "en"; // Получаем язык из локального хранилища или используем 'en' по умолчанию
+    const savedLanguage = localStorage.getItem("language") || "en";
     i18n.changeLanguage(savedLanguage);
   }, [i18n]);
 
   const changeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const newLanguage = event.target.value;
     i18n.changeLanguage(newLanguage);
-    localStorage.setItem("language", newLanguage); // Сохраняем новый язык в локальное хранилище
+    localStorage.setItem("language", newLanguage); 
   };
 
   return (

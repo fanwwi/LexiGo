@@ -29,15 +29,17 @@ const Register = () => {
           className={styles.input}
           placeholder={t("confirm_password")}
         />
-        <select onChange={changeLanguage} defaultValue={i18n.language}>
+
+        <p className={styles.p}>
+          {t("have_account")} <Link to={"/login"}>{t("login")}</Link>
+        </p>
+
+        <button className={styles.btn}>{t("sign_up")}</button>
+        <select onChange={changeLanguage} defaultValue={i18n.language}  className={styles.selectLang}>
           <option value="en">English</option>
           <option value="ru">Русский</option>
           <option value="hi">हिंदी</option>
         </select>
-        <p className={styles.p}>
-          {t("have_account")} <Link to={"/login"}>{t("login")}</Link>
-        </p>
-        <button className={styles.btn}>{t("sign_up")}</button>
       </form>
     </div>
   );

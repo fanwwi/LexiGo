@@ -9,6 +9,10 @@
     "already_started": "Already started?",
     "haven_t_started_yet": "Haven't started yet?",
     "create_account": "Create account",
-    "sign_in": "Sign In"
+    "sign_in": "Sign In",
+    "page_not_found": "Page Not Found!",
+    "error_message": "We’re really sorry, but the page you’re looking for seems to be missing. It might have been moved or deleted. Please return to the Main Menu and continue browsing from there.",
+    "alt_text": "Spilled coffee",
+    "go_home": "Go Home"
   }
   
