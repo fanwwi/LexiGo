@@ -4,6 +4,8 @@ import flag from "../../img/flagg.jpg";
 import { Link } from "react-router-dom";
 
 const MenuPage = () => {
+
+
   return (
     <div className={styles.menu}>
       <header>
