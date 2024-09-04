@@ -1,5 +1,5 @@
 .auth {
-  width: 320px;
+  max-width: 500px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -47,15 +47,17 @@
   font-size: 12px;
   display: flex;
   gap: 5px;
+  margin-bottom: 20px;
 }
 
-.p p {
+.p a {
   text-decoration: underline;
 }
 
 .btn {
-  background-color: #ffcc00;
-  width: 200px;
+  background-color: #febd54;
+  max-width: 300px;
+  width: auto;
   height: 35px;
   border: none;
   border-radius: 20px;
@@ -64,10 +66,11 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
+  padding: 10px;
 }
 
 .btn:hover {
-  background-color: #a68604;
+  background-color: #ffd736;
 }
 
 .auth select {
@@ -79,4 +82,8 @@
   border-radius: 10px;
   outline: none;
   border: 2px solid #fff;
+  color: #000;
+}
+.selectLang {
+  max-width: 150px;
 }

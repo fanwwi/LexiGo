@@ -1,17 +1,19 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/auth/Login";
-import MainPage from "../pages/mainPage/MainPage";
 import Register from "../pages/auth/Register";
+import ErroPage from "../pages/ErrorPage/ErroPage";
+import StarterPage from "../pages/StarterPage/StarterPage";
 
-const MainRoutes = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<MainPage />} />
-      <Route path="/create/account" element={<Register />} />
-      <Route path="/log/account" element={<Login />} />
-    </Routes>
-  );
-};
+export const router = createBrowserRouter([
+  {
+     id: "root",
+    errorElement: <ErroPage />,
+    children: [
+      { path: "/register", element: <Register /> },
+      { path: "/login", element: <Login /> },
+      { path: "/", element: <StarterPage/>},
+    ],
+  },
+]);
 
-export default MainRoutes;

@@ -1,12 +1,10 @@
 import React from "react";
-import MainRoutes from "./routes/MainRoutes";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/MainRoutes";
 
-function App() {
-  return (
-    <div className="App">
-      <MainRoutes />
-    </div>
-  );
-}
+
+const App = () => {
+  return <RouterProvider router={router} /> ;
+};
 
 export default App;
