@@ -1,0 +1,23 @@
+.modules div {
+  width: 280px;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid #0095ff;
+  color: #0095ff;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.modules img {
+  width: 20px;
+}
+
+.modules {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

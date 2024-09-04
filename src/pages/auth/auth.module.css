@@ -1,6 +1,6 @@
 .auth {
-  max-width: 500px;
-  height: 100vh;
+  width: 320px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,11 +14,14 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 20px;
+  text-align: center;
+  width: 250px;
 }
 
 .auth img {
   width: 250px;
   margin-bottom: 30px;
+  margin-top: 0px;
 }
 
 .form {
@@ -47,7 +50,6 @@
   font-size: 12px;
   display: flex;
   gap: 5px;
-  margin-bottom: 20px;
 }
 
 .p a {
@@ -55,14 +57,14 @@
 }
 
 .btn {
-  background-color: #febd54;
+  background-color: #ffd736;
   max-width: 300px;
   width: auto;
   height: 35px;
   border: none;
   border-radius: 20px;
   font-weight: 900;
-  margin-bottom: 15px;
+  margin-top: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
@@ -76,7 +78,7 @@
 .auth select {
   width: 250px;
   height: 35px;
-  margin-top: 15px;
+  margin-top: 20px;
   background-color: #fff;
   padding-left: 10px;
   border-radius: 10px;

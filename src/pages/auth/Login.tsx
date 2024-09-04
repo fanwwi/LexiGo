@@ -1,52 +1,25 @@
-import React, { useEffect } from "react";
 import styles from "./auth.module.css";
 import getstarted from "../../img/getstarted.png";
-import { Link, useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-  const { t, i18n } = useTranslation();
-
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("language") || "en";
-    i18n.changeLanguage(savedLanguage);
-  }, [i18n]);
-
-  const changeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLanguage = event.target.value;
-    i18n.changeLanguage(newLanguage);
-    localStorage.setItem("language", newLanguage); 
-  };
-
   return (
     <div className={styles.auth}>
-      <h1 style={{ marginLeft: "70px" }}>{t("already_started")}</h1>
+      <h1 style={{marginTop: "50px"}}>Already started?</h1>
       <img src={getstarted} alt="" />
       <form className={styles.form}>
-        <input type="text" className={styles.input} placeholder={t("email")} />
+        <input type="text" className={styles.input} placeholder="Email" />
         <input
           type="password"
           className={styles.input}
-          placeholder={t("password")}
+          placeholder="Password"
         />
         <p className={styles.p}>
-          {t("haven_t_started_yet")}{" "}
-          <Link to={"/register"}>{t("create_account")}</Link>
+          Haven't started yet?
+          <Link to={"/register"}>Create account</Link>
         </p>
-        <button className={styles.btn}>{t("sign_in")}</button>
+        <button className={styles.btn}>Sign In</button>
       </form>
-      <select
-        onChange={changeLanguage}
-        defaultValue={i18n.language}
-        className={styles.selectLang}
-      >
-        <option value="" disabled>
-          Choose your language
-        </option>
-        <option value="en">English</option>
-        <option value="ru">Русский</option>
-        <option value="hi">हिंदी</option>
-      </select>
     </div>
   );
 };

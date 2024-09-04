@@ -1,0 +1,37 @@
+.profile {
+  width: 320px;
+  background-color: #0f004d;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload {
+  margin-top: 10px;
+  width: 320px;
+  cursor: pointer;
+  height: 170px;
+  border-radius: 10px;
+}
+.profile img:hover {
+  filter: brightness(90%);
+}
+
+.profile h3 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.functBlocks {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile h4 {
+  color: #fff;
+}
