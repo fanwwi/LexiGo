@@ -1,25 +1,8 @@
 {
-    "get_started": "Get Started",
-    "email": "Email",
-    "password": "Password",
-    "confirm_password": "Confirm the Password",
-    "have_account": "Have an account?",
-    "login": "Log into the account",
-    "sign_up": "Sign Up",
-    "already_started": "Already started?",
-    "haven_t_started_yet": "Haven't started yet?",
-    "create_account": "Create account",
-    "sign_in": "Sign In",
-    "page_not_found": "Page Not Found!",
-    "error_message": "We’re really sorry, but the page you’re looking for seems to be missing. It might have been moved or deleted. Please return to the Main Menu and continue browsing from there.",
-    "alt_text": "Spilled coffee",
-    "go_home": "Go Home",
-    "upgrade_your": "Upgrade your",
-    "language_skills": "Language skills",
-    "learn_kyrgyz": "Learn Kyrgyz language in English, Russian, and Hindi",
-    "choose_your_language": "Choose your language",
-    "english": "English",
-    "russian": "Russian",
-    "hindi": "Hindi"
-  }
-  
+  "name": "Name",
+  "joined": "Joined",
+  "modules": "Modules",
+  "module": "Module",
+  "achievments": "Achievments",
+  "level": "Level"
+}

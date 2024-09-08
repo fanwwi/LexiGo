@@ -1,49 +1,64 @@
 import styles from "../auth/auth.module.css";
 import getstarted from "../../img/getstarted.png";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Register = () => {
-  const { t, i18n } = useTranslation();
+  const [language, setLanguage] = useState("en"); 
+  const navigate = useNavigate();
 
-  const changeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLanguage = event.target.value;
-    i18n.changeLanguage(newLanguage);
-    localStorage.setItem("language", newLanguage);
+  const handleLanguageChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const selectedLanguage = event.target.value;
+    setLanguage(selectedLanguage);
+    localStorage.setItem("language", selectedLanguage);
+  };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    navigate('/login')
   };
 
   return (
     <div className={styles.auth}>
-      <h1>{t("get_started")}</h1>
+      <h1>Get started</h1>
       <img src={getstarted} alt="" />
-      <form className={styles.form}>
-        <input type="email" className={styles.input} placeholder={t("email")} />
+      <form className={styles.form} onSubmit={handleSubmit}>
         <input
-          type="password"
+          type="email"
           className={styles.input}
-          placeholder={t("password")}
+          placeholder="Email"
+          required
         />
         <input
           type="password"
           className={styles.input}
-          placeholder={t("confirm_password")}
+          placeholder="Password"
+          required
+        />
+        <input
+          type="password"
+          className={styles.input}
+          placeholder="Confirm password"
+          required
         />
 
         <p className={styles.p}>
-          {t("have_account")} <Link to={"/login"}>{t("login")}</Link>
+          Haven't started yet? <Link to={"/login"}>Register now!</Link>
         </p>
-        
+
         <select
-          onChange={changeLanguage}
-          defaultValue={i18n.language}
           className={styles.selectLang}
+          value={language}
+          onChange={handleLanguageChange}
         >
+          <option value="en">Choose language</option>
           <option value="en">English</option>
           <option value="ru">Русский</option>
-          <option value="hi">हिंदी</option>
         </select>
 
-        <button className={styles.btn}>{t("sign_up")}</button>
+        <button className={styles.btn}>Sign Up</button>
       </form>
     </div>
   );

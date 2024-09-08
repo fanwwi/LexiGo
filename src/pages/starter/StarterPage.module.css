@@ -1,7 +1,7 @@
 .main_block {
-  max-width: 500px;
-  background-color: #fff4dd;
-  height: 100vh;
+  width: 100%;
+  background-color: #c2ffbf;
+  height: 100%;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -16,13 +16,18 @@
   flex: 1;
 }
 
+.top p {
+  margin-top: -10px;
+  color: #cf4dff;
+}
+
 .main_block span {
   margin-bottom: 20px;
-  color: #0400ff;
+  color: #cf4dff;
 }
 
 .main_block h1 {
-  color: #ff5e00;
+  color: #ff6ca2;
   font-weight: 900;
   font-size: 47px;
   text-transform: uppercase;
@@ -39,7 +44,7 @@
 
 .bottom {
   height: 170px;
-  background-color: #0400ff;
+  background-color: #ef97f7;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -47,7 +52,7 @@
 }
 
 #signIn {
-  background-color: #ffcc00;
+  background-color: #ff6ca2;
   width: 200px;
   margin-top: 35px;
   height: 35px;
@@ -58,17 +63,18 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
+  color: #fff;
 }
 
 #signUp {
-  background-color: #ff5e00;
+  background-color: #ccf29b;
   width: 230px;
   height: 35px;
   border: none;
   border-radius: 20px;
   font-weight: 900;
   margin-bottom: 10px;
-  color: #fff;
+  color: #000;
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
