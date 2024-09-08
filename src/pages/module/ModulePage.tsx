@@ -1,30 +1,42 @@
 import styles from "./modulePage.module.css";
 import notes from "../../img/notes.png";
 import ModuleIcon from "../../components/moduleIcon/ModuleIcon";
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 const ModulePage = () => {
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("language") || "en";
+    i18n.changeLanguage(savedLanguage);
+  }, [i18n]);
+
   return (
     <div className={styles.modulePage}>
       <div className={styles.top}>
-        <h3>Module 1</h3>
+        <div className={styles.topText}>
+          <h3>{t("module")} 1</h3>
+          <span>{t("basic phrases")}</span>
+        </div>
         <img src={notes} alt="" />
       </div>
       <div className={styles.mainModule}>
-        <ModuleIcon isActive={false} style={""}/>
-        <ModuleIcon isActive={true} style={{ top: "80px", left: "60px" }} />
-        <ModuleIcon isActive={false} style={{ top: "170px", left: "30px" }} />
-        <ModuleIcon isActive={false} style={{ top: "260px", left: "60px" }} />
-        <ModuleIcon isActive={false} style={{ top: "340px" }} />
-        <ModuleIcon isActive={false} style={{ top: "420px", right: "60px" }} />
-        <ModuleIcon isActive={false} style={{ top: "510px", right: "20px" }} />
-        <ModuleIcon isActive={false} style={{ top: "590px", right: "60px" }} />
-        <ModuleIcon isActive={false} style={{ top: "670px", right: "100px" }} />
-        <ModuleIcon isActive={false} style={{ top: "740px", left: "60px" }} />
-        <ModuleIcon isActive={false} style={{ top: "820px", left: "100px" }} />
-        <ModuleIcon isActive={false} style={{ top: "900px", right: "70px" }} />
-        <ModuleIcon isActive={false} style={{ top: "990px", right: "30px" }} />
-        <ModuleIcon isActive={false} style={{ top: "1080px", left: "150px" }} />
-        <ModuleIcon isActive={false} style={{ top: "1160px", left: "100px" }} />
+        <ModuleIcon isActive={false} name={t("greeting")} />
+        <ModuleIcon isActive={true} name={t("numbers")} />
+        <ModuleIcon isActive={false} name={t("time")} />
+        <ModuleIcon isActive={false} name={t("colors")} />
+        <ModuleIcon isActive={false} name={t("family")} />
+        <ModuleIcon isActive={false} name={t("house")} />
+        <ModuleIcon isActive={false} name={t("shopping")} />
+        <ModuleIcon isActive={false} name={t("clothes")} />
+        <ModuleIcon isActive={false} name={t("travelings")} />
+        <ModuleIcon isActive={false} name={t("cafe")} />
+        <ModuleIcon isActive={false} name={t("seasons")} />
+        <ModuleIcon isActive={false} name={t("health")} />
+        <ModuleIcon isActive={false} name={t("quiz")} />
+        <ModuleIcon isActive={false} name={t("feelings")} />
+        <ModuleIcon isActive={false} name={t("school")} />
       </div>
     </div>
   );

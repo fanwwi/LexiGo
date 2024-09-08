@@ -5,13 +5,10 @@ import { FC } from "react";
 
 interface ModuleInterface {
   isActive: boolean;
-  style: {};
+  name: string;
 }
 
-const ModuleIcon: FC<ModuleInterface> = ({
-  isActive = false,
-  style = {},
-}) => {
+const ModuleIcon: FC<ModuleInterface> = ({ isActive = false, name }) => {
   const icon = isActive ? icon2 : icon1;
 
   const activeStyle = isActive
@@ -23,8 +20,16 @@ const ModuleIcon: FC<ModuleInterface> = ({
       }
     : {};
   return (
-    <div className={styles.icon} style={{ ...style, ...activeStyle }}>
-      <img src={icon} alt="Module Icon" className={styles.iconImage} />
+    <div className={styles.icon}>
+      <div className={styles.chapter}>
+        <span>{name}</span>
+      </div>
+      <img
+        src={icon}
+        alt="Module Icon"
+        className={styles.iconImage}
+        style={{ ...activeStyle }}
+      />
     </div>
   );
 };

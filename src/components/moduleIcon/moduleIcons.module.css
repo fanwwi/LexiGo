@@ -1,18 +1,40 @@
 .iconImage {
   width: 60px;
+  height: 60px;
 }
 
 .icon {
-  position: absolute;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .icon span {
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }
 
+.icon:nth-child(odd) {
+  transform: translateX(-45px); /* Смещение влево для нечетных элементов */
+}
 
+.icon:nth-child(even) {
+  transform: translateX(45px); /* Смещение вправо для четных элементов */
+}
 
+.chapter {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #039cc2;
+}
+
+.chapter span {
+  font-size: 10px;
+  width: 80px;
+  margin-bottom: -10px;
+  font-weight: 450;
+  text-align: center;
+}

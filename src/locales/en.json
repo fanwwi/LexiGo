@@ -4,5 +4,21 @@
   "modules": "Modules",
   "module": "Module",
   "achievments": "Achievments",
-  "level": "Level"
+  "level": "Level",
+  "basic phrases": "Basics of the language",
+  "greeting": "Greeting phrases",
+  "numbers": "Numbers and days of the week",
+  "time": "Time and dates",
+  "colors": "Colors and shapes",
+  "family": "Family",
+  "house": "House and stuff",
+  "clothes": "Clothes",
+  "shopping": "Shopping",
+  "travelings": "Travelings",
+  "cafes": "Cafe and restaurants",
+  "seansons": "Seasons and Weather",
+  "health": "Health",
+  "quiz": "Quiz",
+  "feelings": "Feelings and emotions",
+  "school": "School"
 }

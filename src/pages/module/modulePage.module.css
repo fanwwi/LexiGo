@@ -9,12 +9,13 @@
     rgb(251, 255, 222) 50%,
     rgb(255, 227, 241) 100%
   );
-  height: 220vh;
+  height: 300vh;
+  width: 100%;
 }
 
 .top {
   display: flex;
-  width: 280px;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   height: 100px;
@@ -25,6 +26,15 @@
   color: #ff6ca2;
 }
 
+.topText {
+  display: flex;
+  flex-direction: column;
+}
+
+.topText {
+  font-size: 12px;
+}
+
 .top img {
   width: 40px;
 }
@@ -32,7 +42,6 @@
 .mainModule {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  position: relative;
+  gap: 30px;
   align-items: center;
 }
