@@ -1,20 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { StatesType } from "../../helpers/Types";
+import { UserType } from "../../types";
 
+type StatesType = {
+  error: null | string;
+  loading: boolean;
+  user: null | UserType;
+};
 
 const INIT_STATE: StatesType = {
   error: null,
   loading: false,
-  oneUser: null,
-  currentUser: null,
+  user: null,
 };
 
 export const usersSlice = createSlice({
   name: "users",
   initialState: INIT_STATE,
-  reducers: {},
-  extraReducers: (builder) => {
+  reducers: {
+    setError: (state, { payload }) => {
+      state.error = payload;
+    },
+    logout: (state) => {
+      localStorage.removeItem("tokens");
+      state.user = null;
+    },
   },
+  extraReducers: (builder) => {},
 });
 
-export default usersSlice.reducer;
+export const { setError, logout } = usersSlice.actions;

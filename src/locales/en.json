@@ -20,5 +20,10 @@
   "health": "Health",
   "quiz": "Quiz",
   "feelings": "Feelings and emotions",
-  "school": "School"
+  "school": "School",
+  "write": "Edit your profile photo (URL) or remove it",
+  "enter": "Enter the URL...",
+  "submit": "Submit",
+  "remove": "Remove photo",
+  "closeModal": "Close"
 }

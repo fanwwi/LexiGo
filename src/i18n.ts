@@ -14,7 +14,6 @@ interface Resources {
   };
 }
 
-console.log("i18n configuration:", i18n);
 
 const resources: Resources = {
   en: {
