@@ -18,7 +18,7 @@ export type TasksType = {
 };
 
 type TaskState = {
-  attempts: number;
+  attemptsPerTask: Record<number, number>; // Add this to track attempts for each task
   selectedAnswer: string | null;
   isCorrect: boolean;
   showAnswer: boolean;
@@ -31,7 +31,7 @@ const Task: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const [state, setState] = useState<TaskState>({
-    attempts: 2,
+    attemptsPerTask: {},
     selectedAnswer: null,
     isCorrect: false,
     showAnswer: false,
@@ -41,7 +41,6 @@ const Task: React.FC = () => {
   });
 
   const { allTasks } = useAppSelector((state) => state.tasks);
-  const { oneTask } = useAppSelector((state) => state.tasks);
 
   useEffect(() => {
     const fetchTasks = async () => {
@@ -57,53 +56,62 @@ const Task: React.FC = () => {
         .filter((task) => task.task_id === 1)
         .sort((a, b) => a.id - b.id);
 
+      const attemptsPerTask = filteredTasks.reduce((acc, task) => {
+        acc[task.id] = 2; // Initialize attempts for each task to 2
+        return acc;
+      }, {} as Record<number, number>);
+
       setState((prevState) => ({
         ...prevState,
         tasks: filteredTasks,
+        attemptsPerTask,
       }));
     }
   }, [allTasks]);
 
   const handleAnswerClick = (key: string) => {
-    if (state.selectedAnswer === null) {
-      if (currentTask) {
-        const correctAnswer = currentTask.key;
-        const selectedAnswer =
-          currentTask.answers[key as keyof typeof currentTask.answers];
+    const currentTask = state.tasks[state.currentTaskIndex];
 
-        console.log("Selected answer value:", selectedAnswer);
-        console.log("Correct answer value:", correctAnswer);
+    if (state.selectedAnswer === null && currentTask) {
+      const correctAnswer = currentTask.key;
+      const selectedAnswer =
+        currentTask.answers[key as keyof typeof currentTask.answers];
 
-        const isCorrect = selectedAnswer === correctAnswer;
-        if (isCorrect) {
-          console.log("Answer is correct");
-          setState((prevState) => ({
-            ...prevState,
-            selectedAnswer: key,
-            isCorrect: true,
-            showAnswer: false,
-            showSadEmoji: false,
-          }));
-          navigate(
-            `/module/${currentTask.module_id}/task/${
-              state.currentTaskIndex + 2
-            }`
-          );
-        } else {
-          const newAttempts = state.attempts - 1;
-          console.log("Answer is incorrect");
-          setState((prevState) => ({
-            ...prevState,
-            selectedAnswer: key,
-            isCorrect: false,
-            showAnswer: newAttempts === 0,
-            showSadEmoji: newAttempts === 0,
-            attempts: newAttempts,
-          }));
-        }
+      console.log("Selected answer value:", selectedAnswer);
+      console.log("Correct answer value:", correctAnswer);
+
+      const isCorrect = selectedAnswer === correctAnswer;
+      const newAttempts = (state.attemptsPerTask[currentTask.id] || 2) - 1;
+
+      if (isCorrect) {
+        console.log("Answer is correct");
+        setState((prevState) => ({
+          ...prevState,
+          selectedAnswer: key,
+          isCorrect: true,
+          showAnswer: false,
+          showSadEmoji: false,
+          attemptsPerTask: {
+            ...prevState.attemptsPerTask,
+            [currentTask.id]: newAttempts,
+          },
+        }));
       } else {
-        console.log("Current task is not defined");
+        console.log("Answer is incorrect");
+        setState((prevState) => ({
+          ...prevState,
+          selectedAnswer: key,
+          isCorrect: false,
+          showAnswer: newAttempts === 0,
+          showSadEmoji: newAttempts === 0,
+          attemptsPerTask: {
+            ...prevState.attemptsPerTask,
+            [currentTask.id]: newAttempts,
+          },
+        }));
       }
+    } else {
+      console.log("Current task is not defined or answer already selected");
     }
   };
 
@@ -118,6 +126,7 @@ const Task: React.FC = () => {
         isCorrect: false,
       }));
     } else {
+      // Go to the next level or the finish page
       navigate("/finish");
     }
   };
@@ -158,8 +167,8 @@ const Task: React.FC = () => {
             ))}
           </div>
           <div className={styles.attempts}>
-            {state.attempts > 0 ? (
-              <p>Attempts left: {state.attempts}</p>
+            {state.attemptsPerTask[currentTask.id] > 0 ? (
+              <p>Attempts left: {state.attemptsPerTask[currentTask.id]}</p>
             ) : (
               <div className="">
                 <p
