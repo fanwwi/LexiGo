@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #c2ffbf;
+  background-color: #8c00ff;
 }
 
 .auth h1 {
@@ -15,7 +15,7 @@
   margin-bottom: 20px;
   text-align: center;
   width: 250px;
-  color: #ff6ca2;
+  color: #fff;
 }
 
 .auth img {
@@ -35,11 +35,12 @@
   width: 250px;
   height: 35px;
   padding-left: 15px;
-  border: 2px solid #cf4dff;
+  border: 2px solid #ffffff;
   background-color: transparent;
   border-radius: 15px;
   outline: none;
   color: #cf4dff;
+  background-color: #fff;
 }
 
 .language {
@@ -48,7 +49,7 @@
   width: 150px;
   margin-bottom: -20px;
   margin-top: 10px;
-  color: #cf4dff;
+  color: #fff;
   font-weight: bold;
 }
 
@@ -60,7 +61,7 @@
   font-size: 12px;
   display: flex;
   gap: 5px;
-  color: #ff6ca2;
+  color: #fff;
 }
 
 .p a {
@@ -68,7 +69,7 @@
 }
 
 .btn {
-  background-color: #ccf29b;
+  background-color: #ffffff;
   max-width: 300px;
   width: 150px;
   height: 35px;
@@ -80,21 +81,16 @@
   text-transform: uppercase;
   cursor: pointer;
   color: #ff6ca2;
-  border: 3px solid #ff6ca2;
-}
-
-.btn:hover {
-  background-color: #ffd736;
 }
 
 .auth select {
   width: 250px;
   height: 35px;
   margin-top: 20px;
-  background-color: #cf4dff;
+  background-color: #ffffff;
   padding-left: 10px;
   border-radius: 10px;
   outline: none;
   border: 3px solid #fff;
-  color: #fff;
+  color: #aa00ff;
 }

@@ -1,7 +1,7 @@
 .main_block {
   width: 100%;
-  background-color: #c2ffbf;
   height: 100%;
+  background-color: #aa00ff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -18,16 +18,16 @@
 
 .top p {
   margin-top: -10px;
-  color: #cf4dff;
+  color: #fff;
 }
 
 .main_block span {
   margin-bottom: 20px;
-  color: #cf4dff;
+  color: #fff;
 }
 
 .main_block h1 {
-  color: #ff6ca2;
+  color: #fff;
   font-weight: 900;
   font-size: 47px;
   text-transform: uppercase;
@@ -44,7 +44,7 @@
 
 .bottom {
   height: 170px;
-  background-color: #ef97f7;
+  background-color: #ffffff;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -67,7 +67,8 @@
 }
 
 #signUp {
-  background-color: #ccf29b;
+  background-color: #fff;
+  border: 3px solid #8400ff !important;
   width: 230px;
   height: 35px;
   border: none;

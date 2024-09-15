@@ -48,7 +48,7 @@ const ProfilePage = () => {
           profilePicture: newProfilePhotoUrl,
         })
       );
-      setProfilePhotoUrl(newProfilePhotoUrl); // Обновляем URL для отображения
+      setProfilePhotoUrl(newProfilePhotoUrl);
     }
     handleCloseModal();
   };
@@ -56,26 +56,27 @@ const ProfilePage = () => {
   const handleRemoveProfilePhoto = () => {
     if (currentUser) {
       dispatch(clearProfilePhoto(currentUser.id));
-      setProfilePhotoUrl(defaultProfilePhoto); // Сбрасываем к дефолтному фото
+      setProfilePhotoUrl(defaultProfilePhoto);
     }
   };
 
   return (
     <div className={styles.profile}>
-      <img
-        src={profilePhotoUrl || defaultProfilePhoto}
-        className={styles.upload}
-        alt="profile"
-        onClick={() => setIsModalOpen(true)}
-      />
-      <div className={styles.textBlock}>
-        <div className={styles.left}>
-          <h3>{currentUser?.name}</h3>
-          <span>
-            {t("joined")} {currentUser ? currentUser.joinDate : "Error!"}
-          </span>
+      <div className={styles.profile_top}>
+        <img
+          src={profilePhotoUrl || defaultProfilePhoto}
+          className={styles.upload}
+          alt="profile"
+          onClick={() => setIsModalOpen(true)}
+        />
+        <div className={styles.textBlock}>
+          <div className={styles.left}>
+            <h3>{currentUser?.name}</h3>
+            <span>
+              {t("joined")} {currentUser ? currentUser.joinDate : "Error!"}
+            </span>
+          </div>
         </div>
-        <img src={flag} alt="flag" />
       </div>
       <div className={styles.functBlocks}>
         <Modules />

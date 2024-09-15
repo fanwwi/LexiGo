@@ -7,8 +7,8 @@
 .achievBlock {
   width: 280px;
   height: 50px;
-  background-color: #c2ffbf;
-  border: 1px solid #cf4dff;
+  background-color: #fff;
+  border: 2px solid #cf4dff;
   display: flex;
   align-items: center;
   padding: 5px;
@@ -23,7 +23,7 @@
   position: relative;
   z-index: 1;
   margin-left: 10px;
-  color: #ff6ca2;
+  color: #8e00be;
   font-weight: 800;
 }
 

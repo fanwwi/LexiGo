@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, FC } from "react";
 import styles from "./task.module.css";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../helpers/Types";
@@ -15,7 +15,7 @@ type TaskState = {
   tasks: TasksType[];
 };
 
-const Task: React.FC = () => {
+const Task: FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const [state, setState] = useState<TaskState>({

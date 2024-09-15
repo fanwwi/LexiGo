@@ -17,7 +17,7 @@ const StarterPage = () => {
         </Link>
         <Link to={"/register"}>
           <button id={styles.signUp}>Sign Up</button>
-        </Link>
+        </Link>  
       </div>
     </div>
   );

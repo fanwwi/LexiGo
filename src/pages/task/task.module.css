@@ -1,7 +1,7 @@
 .container {
   width: 100%;
   height: 100vh;
-  background-color: #bdffb6;
+  background-color: #fff;
   padding: 20px;
   text-align: center;
 }
@@ -10,8 +10,7 @@
   font-size: 20px;
   margin-bottom: 20px;
   margin-top: 10px;
-  color: #1100ff;
-  text-shadow: #44ff00 3px 0 1px;
+  color: #c83cff;
 }
 
 .options {
@@ -23,11 +22,11 @@
 .button {
   margin: 7px;
   padding: 10px 20px;
-  background-color: #00ffff;
-  color: #ff00c8;
+  background-color: #b956ff;
+  border-radius: 10px;
+  color: #ffffff;
   font-weight: bold;
   cursor: pointer;
-  border: 2px solid #ff00b3;
   transition: background-color 0.3s ease;
   width: 250px;
 }
@@ -48,7 +47,7 @@
 
 .attempts {
   margin: 20px 0;
-  color: #ff00cc;
+  color: #c83cff;
   font-weight: bold;
   letter-spacing: 1px;
 }
