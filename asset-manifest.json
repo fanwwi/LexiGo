@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9cbb2012.css",
+    "main.js": "/static/js/main.d3154b47.js",
+    "static/media/getstarted.png": "/static/media/getstarted.90cf7b269e10508b1634.png",
+    "static/media/coins.png": "/static/media/coins.c6dc163700339cb76b73.png",
+    "static/media/premium.png": "/static/media/premium.d367e3b7edd4a3b81963.png",
+    "static/media/taught.png": "/static/media/taught.bed6c4ba8df2262d48af.png",
+    "static/media/notes.png": "/static/media/notes.dfdbe012683b6aabdabd.png",
+    "static/media/spilledCoffe.png": "/static/media/spilledCoffe.0bede8384946f57d00ee.png",
+    "static/media/arrow.png": "/static/media/arrow.607aff5049a6ec66384f.png",
+    "static/media/upload-profile.webp": "/static/media/upload-profile.c64474ab69eeaad7cf7f.webp",
+    "static/media/non-active.png": "/static/media/non-active.d3ff5df2153908a5872a.png",
+    "static/media/active.png": "/static/media/active.c134c8a55bbc3ca5e24e.png",
+    "index.html": "/index.html",
+    "main.9cbb2012.css.map": "/static/css/main.9cbb2012.css.map",
+    "main.d3154b47.js.map": "/static/js/main.d3154b47.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9cbb2012.css",
+    "static/js/main.d3154b47.js"
+  ]
+}
