@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { UserType } from "../../types";
-import { $axios } from "../../helpers/axios";
+import axios from "axios";
 
 const getCurrentDate = (): string => {
   const today = new Date();
@@ -20,26 +20,77 @@ export const registerUser = createAsyncThunk(
     data: UserType;
     navigate: (path: string) => void;
   }) => {
+    const UserId = Date.now();
     const userData = {
       name: data.name,
       password: data.password,
       joinDate: getCurrentDate(),
-      id: Date.now(),
+      id: UserId,
+      profilePhoto: data.profilePhoto,
     };
-
     try {
-      localStorage.setItem("userData", JSON.stringify(userData));
-      navigate(`/profile/${data.id}`);
+      await axios.post("http://localhost:8000/users", userData);
+      localStorage.setItem("userId", JSON.stringify(UserId));
+      navigate(`/profile/${UserId}`);
     } catch (error: any) {
       console.log(error);
     }
   }
 );
 
-export const saveUserImage = createAsyncThunk(
-  "users/userImage",
-  async (url: string) => {
-    localStorage.setItem("imageUrl", url);
-    window.location.reload();
+export const updateProfilePicture = createAsyncThunk(
+  "users/updateProfilePicture",
+  async ({
+    userId,
+    profilePicture,
+  }: {
+    userId: number;
+    profilePicture: string;
+  }) => {
+    const profilePhoto = {
+      profilePicture: profilePicture,
+    };
+    try {
+      await axios.patch(
+        `http://localhost:8000/users/${userId}/`,
+        profilePhoto,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+    } catch (error: any) {
+      console.log("Ошибка обновления фото профиля:", error);
+    }
+  }
+);
+
+export const clearProfilePhoto = createAsyncThunk(
+  "users/clearUserProfile",
+  async (userId: number) => {
+    try {
+      const response = await axios.patch(
+        `http://localhost:8000/users/${userId}`,
+        {
+          profilePhoto: "",
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error clearing profile photo", error);
+    }
+  }
+);
+
+export const getCurrentUser = createAsyncThunk(
+  "users/getCurrentUser",
+  async (id: number) => {
+    try {
+      const res = await axios.get(`http://localhost:8000/users/${id}`);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
   }
 );

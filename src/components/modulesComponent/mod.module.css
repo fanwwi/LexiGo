@@ -12,12 +12,16 @@
   cursor: pointer;
 }
 
+h5 {
+  font-size: 10px;
+}
+
 .modules img {
   width: 20px;
 }
 
 .modules {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }

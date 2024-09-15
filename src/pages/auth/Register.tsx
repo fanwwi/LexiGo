@@ -6,11 +6,6 @@ import { useAppDispatch } from "../../helpers/Types";
 import { registerUser } from "../../store/users/user.action";
 import { UserType } from "../../types";
 
-// Простой пример хэширования пароля (можно заменить более сложным алгоритмом)
-const hashPassword = (password: string) => {
-  return btoa(password); // Base64 хэш, можно заменить на другой метод
-};
-
 const Register = () => {
   const [language, setLanguage] = useState("default");
   const navigate = useNavigate();
@@ -20,7 +15,8 @@ const Register = () => {
     name: "",
     password: Number(),
     joinDate: Number(),
-    id: Number()
+    id: Number(),
+    profilePhoto: "",
   });
 
   const handleLanguageChange = (
@@ -67,7 +63,9 @@ const Register = () => {
           Already have an account? <Link to={"/login"}>Sign in now!</Link>
         </p>
 
-        <p className={styles.language}>Choose the language on which u will study</p>
+        <p className={styles.language}>
+          Choose the language on which u will study
+        </p>
         <select
           className={styles.selectLang}
           value={language}

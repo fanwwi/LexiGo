@@ -11,19 +11,18 @@ const Modules = () => {
     <div>
       <div className={styles.modules}>
         <h4>{t("modules")}</h4>
-        <div
-          className={styles.moduleBlock}
-          onClick={() => navigate("/module/1")}
-        >
+        <div onClick={() => navigate("/module/1")}>
           <span>{t("module")} 1</span>
           <img src={lightning} alt="lightning" />
+          <h5>{t("basic phrases")}</h5>
         </div>
         <div
           className={styles.moduleBlock}
           onClick={() => navigate("/module/2")}
         >
-          <span>{t('module')} 2</span>
+          <span>{t("module")} 2</span>
           <img src={lightning} alt="lightning" />
+          <h5>{t("talking")}</h5>
         </div>
         <div
           className={styles.moduleBlock}
@@ -31,6 +30,7 @@ const Modules = () => {
         >
           <span>{t("module")} 3</span>
           <img src={lightning} alt="lightning" />
+          <h5>{t("advanced")}</h5>
         </div>
       </div>
     </div>

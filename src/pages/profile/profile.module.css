@@ -97,6 +97,8 @@
   border-radius: 5px;
   color: #ff6ca2;
   padding: 7px 10px;
+  width: 300px;
+  margin-bottom: 30px;
 }
 
 .modalContent input::placeholder {
@@ -112,11 +114,14 @@
   padding: 6px 20px;
   border-radius: 5px;
   color: #fff;
+  margin-top: -20px;
+  margin-bottom: -15px;
+  width: 100%;
 }
 
 .closeBtn {
   width: 100%;
-  background-color: #cf4dff;
+  background-color: #ace068;
   padding-top: 5px;
   padding-bottom: 5px;
   color: #fff;

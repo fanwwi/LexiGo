@@ -1,0 +1,262 @@
+{
+  "users": [
+    {
+      "name": "fanwwi",
+      "password": "12345678",
+      "joinDate": "14.09.2024",
+      "id": 1726318905695,
+      "profilePhoto": ""
+    },
+    {
+      "name": "aigerim",
+      "password": "12345678",
+      "joinDate": "15.09.2024",
+      "id": 1726376582424,
+      "profilePhoto": ""
+    }
+  ],
+  "levels": [
+    {
+      "title": "Таанышуу",
+      "isActive": false,
+      "module_id": 1,
+      "id": 1
+    },
+    {
+      "title": "Жолугуу",
+      "isActive": true,
+      "module_id": 1,
+      "id": 2
+    },
+    {
+      "title": "Хобби жана Кызыкчылыктар",
+      "isActive": false,
+      "module_id": 1,
+      "id": 3
+    },
+    {
+      "title": "Түстөр жана заттар",
+      "isActive": false,
+      "module_id": 1,
+      "id": 4
+    },
+    {
+      "title": "Тамак-аш жана сатып алуулар",
+      "isActive": false,
+      "module_id": 1,
+      "id": 5
+    },
+    {
+      "title": "Убыкыт",
+      "isActive": false,
+      "module_id": 1,
+      "id": 6
+    },
+    {
+      "title": "Үй-бүлө жана мамиле",
+      "isActive": false,
+      "module_id": 1,
+      "id": 7
+    },
+    {
+      "title": "Кийим",
+      "isActive": false,
+      "module_id": 1,
+      "id": 8
+    },
+    {
+      "title": "Сандар",
+      "isActive": false,
+      "module_id": 1,
+      "id": 9
+    },
+    {
+      "title": "Жума күндөрү",
+      "isActive": false,
+      "module_id": 1,
+      "id": 10
+    },
+    {
+      "title": "Даталар",
+      "isActive": false,
+      "module_id": 1,
+      "id": 11
+    },
+    {
+      "title": "Үй жана буюмдар",
+      "isActive": false,
+      "module_id": 1,
+      "id": 12
+    },
+    {
+      "title": "Саякат",
+      "isActive": false,
+      "module_id": 1,
+      "id": 13
+    },
+    {
+      "title": "Шаар жана жолдор",
+      "isActive": false,
+      "module_id": 1,
+      "id": 14
+    },
+    {
+      "title": "Кафе дана ресторандар",
+      "isActive": false,
+      "module_id": 1,
+      "id": 15
+    },
+    {
+      "title": "Жыл мезгидери",
+      "isActive": false,
+      "module_id": 2,
+      "id": 16
+    },
+    {
+      "title": "Аба-ырайы",
+      "isActive": false,
+      "module_id": 2,
+      "id": 17
+    },
+    {
+      "title": "Сезимдер",
+      "isActive": false,
+      "module_id": 2,
+      "id": 18
+    },
+    {
+      "title": "Эмоциялар",
+      "isActive": false,
+      "module_id": 2,
+      "id": 19
+    },
+    {
+      "title": "Жаныбарлар",
+      "isActive": false,
+      "module_id": 2,
+      "id": 20
+    },
+    {
+      "title": "Өсүмдүктөр",
+      "isActive": false,
+      "module_id": 2,
+      "id": 21
+    },
+    {
+      "title": "Конок бөлмөсү",
+      "isActive": false,
+      "module_id": 2,
+      "id": 22
+    },
+    {
+      "title": "Уктоо бөлмөсү",
+      "isActive": false,
+      "module_id": 2,
+      "id": 23
+    },
+    {
+      "title": "Балдар бөлмөсү",
+      "isActive": false,
+      "module_id": 2,
+      "id": 24
+    },
+    {
+      "title": "Ашкана",
+      "isActive": false,
+      "module_id": 2,
+      "id": 25
+    },
+    {
+      "title": "Ванна",
+      "isActive": false,
+      "module_id": 2,
+      "id": 26
+    },
+    {
+      "title": "Балкон",
+      "isActive": false,
+      "module_id": 2,
+      "id": 27
+    },
+    {
+      "title": "Жерлер",
+      "isActive": false,
+      "module_id": 2,
+      "id": 28
+    },
+    {
+      "title": "Үй жумуштары",
+      "isActive": false,
+      "module_id": 2,
+      "id": 29
+    },
+    {
+      "title": "Сейилдөө",
+      "isActive": false,
+      "module_id": 2,
+      "id": 30
+    }
+  ],
+  "tasks": [
+    {
+      "question": "Choose the correct word of Салам",
+      "task_id": 1,
+      "module_id": 1,
+      "answers": {
+        "one": "Hello",
+        "two": "Goodbye",
+        "three": "Thanks"
+      },
+      "key": "Hello",
+      "id": 1
+    },
+    {
+      "question": "How to ask What is your name and answer?",
+      "task_id": 1,
+      "module_id": 1,
+      "answers": {
+        "one": "Сиздин атыңыз ким? Менин атым __________",
+        "two": "Сиз канча жаштасыз? Мен _____ жаштамын",
+        "three": "Сиздин каерде жашайсыз? Мен ___________ жашаймын"
+      },
+      "key": "Сиздин атыңыз ким? Менин атым __________",
+      "id": 2
+    },
+    {
+      "question": "Choose the correct word of Мен __________ жаштамын",
+      "task_id": 1,
+      "module_id": 1,
+      "answers": {
+        "one": "I'm _________ years old",
+        "two": "I feel _______. You?",
+        "three": "I'm from _________"
+      },
+      "key": "I'm _________ years old",
+      "id": 3
+    },
+    {
+      "question": "Choose the correct word of Жашаймын",
+      "task_id": 1,
+      "module_id": 1,
+      "answers": {
+        "one": "I'm living",
+        "two": "I'm asking",
+        "three": "I'm giving"
+      },
+      "key": "I'm living",
+      "id": 4
+    },
+    {
+      "question": "How to say Thanks, I feel _______. You?",
+      "task_id": 1,
+      "module_id": 1,
+      "answers": {
+        "one": "Жок. Ал _________ болгон",
+        "two": "Рахмат. Мен ________. Сенчи?",
+        "three": "Макул. __________ бүтүрөм"
+      },
+      "key": "Рахмат. Мен ________. Сенчи?",
+      "id": 5
+    }
+  ]
+}
