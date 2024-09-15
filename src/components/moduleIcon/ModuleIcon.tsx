@@ -14,7 +14,7 @@ const ModuleIcon: FC<LevelsType> = ({ isActive = false, title, onClick }) => {
   const activeStyle = isActive
     ? {
         border: "6px solid #b700ff",
-        borderRadius: "50%",
+        borderRadius: "70%",
         padding: "2px",
         boxShadow: "0 0 10px #b700ff, inset 0 0 10px #b700ff",
       }

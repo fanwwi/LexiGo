@@ -16,12 +16,12 @@
 }
 
 .icon:nth-child(odd) {
-  transform: translateX(-45px);
-  color: #b700ff; /* Смещение влево для нечетных элементов */
+  transform: translateX(-55px);
+  color: #b700ff;
 }
 
 .icon:nth-child(even) {
-  transform: translateX(45px); /* Смещение вправо для четных элементов */
+  transform: translateX(55px);
 }
 
 .chapter {

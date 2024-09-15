@@ -81,14 +81,6 @@
   cursor: pointer;
 }
 
-#signIn:hover {
-  background-color: #a68604;
-}
-
-#signUp:hover {
-  background-color: #de5302;
-}
-
 .image {
   z-index: 2;
   width: 270px;

@@ -65,14 +65,10 @@ const Task: FC = () => {
       const selectedAnswer =
         currentTask.answers[key as keyof typeof currentTask.answers];
 
-      console.log("Selected answer value:", selectedAnswer);
-      console.log("Correct answer value:", correctAnswer);
-
       const isCorrect = selectedAnswer === correctAnswer;
       const newAttempts = (state.attemptsPerTask[currentTask.id] || 2) - 1;
 
       if (isCorrect) {
-        console.log("Answer is correct");
         setState((prevState) => ({
           ...prevState,
           selectedAnswer: key,
@@ -85,7 +81,6 @@ const Task: FC = () => {
           },
         }));
       } else {
-        console.log("Answer is incorrect");
         if (newAttempts <= 0) {
           setState((prevState) => ({
             ...prevState,
@@ -112,8 +107,6 @@ const Task: FC = () => {
           }));
         }
       }
-    } else {
-      console.log("Current task is not defined or answer already selected");
     }
   };
 
@@ -168,48 +161,43 @@ const Task: FC = () => {
             ))}
           </div>
           <div className={styles.attempts}>
-            {state.attemptsPerTask[currentTask.id] > 0 ? (
-              <p>Attempts left: {state.attemptsPerTask[currentTask.id]}</p>
-            ) : (
-              <div className="">
-                <p
-                  className={`${styles.answer} ${
-                    state.showAnswer ? styles.incorrect : ""
-                  }`}
-                >
-                  Correct answer: <br />
-                  <br />
-                  <span>
-                    {currentTask.key}
-                    <br />
-                    <button className={styles.nextBtn} onClick={handleNext}>
-                      Next ➡️
-                    </button>
-                  </span>
-                </p>
+            {state.isCorrect && !state.showAnswer && (
+              <div className={styles.isCorrect}>
+                <p className={styles.emoji}>👍</p>
+                <button className={styles.nextBtn} onClick={handleNext}>
+                  Next ➡️
+                </button>
               </div>
             )}
-          </div>
-
-          {state.isCorrect && (
-            <div className={styles.isCorrect}>
-              <p className={styles.emoji}>👍</p>
-              <button className={styles.nextBtn} onClick={handleNext}>
-                Next ➡️
-              </button>
-            </div>
-          )}
-          {state.showSadEmoji && !state.isCorrect && (
-            <div className={styles.emoji}>😢</div>
-          )}
-          {state.selectedAnswer !== null &&
-            !state.isCorrect &&
-            !state.showSadEmoji &&
-            state.attemptsPerTask[currentTask.id] > 0 && (
-              <button onClick={handleReset} className={styles.tryAgainButton}>
-                Try Again
-              </button>
+            {state.selectedAnswer !== null &&
+              !state.isCorrect &&
+              state.attemptsPerTask[currentTask.id] <= 0 && (
+                <div className="">
+                  <p className={styles.answer}>
+                    Correct answer: <br />
+                    <br />
+                    <span>
+                      {currentTask.key}
+                      <br />
+                      <button className={styles.nextBtn} onClick={handleNext}>
+                        Next ➡️
+                      </button>
+                    </span>
+                  </p>
+                </div>
+              )}
+            {state.selectedAnswer !== null &&
+              !state.isCorrect &&
+              !state.showSadEmoji &&
+              state.attemptsPerTask[currentTask.id] > 0 && (
+                <button onClick={handleReset} className={styles.tryAgainButton}>
+                  Try Again
+                </button>
+              )}
+            {state.showSadEmoji && !state.isCorrect && (
+              <div className={styles.emoji}>😢</div>
             )}
+          </div>
         </>
       )}
     </div>

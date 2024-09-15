@@ -71,15 +71,11 @@
 
 .tryAgainButton {
   padding: 10px 20px;
-  background-color: #ff0080;
+  background-color: #ff00ea;
   color: white;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-.tryAgainButton:hover {
-  background-color: #d70096;
 }
 
 .isCorrect {
@@ -93,8 +89,8 @@
     width: 100px;
     height: 40px;
     margin-top: 30px;
-    color: #1100ff;
-    background-color: #00ffff;
+    color: #ffffff;
+    background-color: #c300ff;
     font-weight: bold;
-    border: 1px solid #1100ff;
+    border-radius: 5px;
 }
