@@ -3,22 +3,10 @@ import styles from "./task.module.css";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../helpers/Types";
 import { getAllTasks } from "../../store/tasks/tasks.actions";
-
-export type TasksType = {
-  question: string;
-  task_id: number;
-  module_id: number;
-  answers: {
-    one: string;
-    two: string;
-    three: string;
-  };
-  key: string;
-  id: number;
-};
+import { TasksType } from "../../types";
 
 type TaskState = {
-  attemptsPerTask: Record<number, number>; // Add this to track attempts for each task
+  attemptsPerTask: Record<number, number>;
   selectedAnswer: string | null;
   isCorrect: boolean;
   showAnswer: boolean;
@@ -57,7 +45,7 @@ const Task: React.FC = () => {
         .sort((a, b) => a.id - b.id);
 
       const attemptsPerTask = filteredTasks.reduce((acc, task) => {
-        acc[task.id] = 2; // Initialize attempts for each task to 2
+        acc[task.id] = 2;
         return acc;
       }, {} as Record<number, number>);
 
@@ -98,17 +86,31 @@ const Task: React.FC = () => {
         }));
       } else {
         console.log("Answer is incorrect");
-        setState((prevState) => ({
-          ...prevState,
-          selectedAnswer: key,
-          isCorrect: false,
-          showAnswer: newAttempts === 0,
-          showSadEmoji: newAttempts === 0,
-          attemptsPerTask: {
-            ...prevState.attemptsPerTask,
-            [currentTask.id]: newAttempts,
-          },
-        }));
+        if (newAttempts <= 0) {
+          setState((prevState) => ({
+            ...prevState,
+            selectedAnswer: key,
+            isCorrect: false,
+            showAnswer: true,
+            showSadEmoji: true,
+            attemptsPerTask: {
+              ...prevState.attemptsPerTask,
+              [currentTask.id]: newAttempts,
+            },
+          }));
+        } else {
+          setState((prevState) => ({
+            ...prevState,
+            selectedAnswer: key,
+            isCorrect: false,
+            showAnswer: false,
+            showSadEmoji: false,
+            attemptsPerTask: {
+              ...prevState.attemptsPerTask,
+              [currentTask.id]: newAttempts,
+            },
+          }));
+        }
       }
     } else {
       console.log("Current task is not defined or answer already selected");
@@ -126,7 +128,6 @@ const Task: React.FC = () => {
         isCorrect: false,
       }));
     } else {
-      // Go to the next level or the finish page
       navigate("/finish");
     }
   };
@@ -198,10 +199,13 @@ const Task: React.FC = () => {
               </button>
             </div>
           )}
-          {state.showSadEmoji && <div className={styles.emoji}>😢</div>}
+          {state.showSadEmoji && !state.isCorrect && (
+            <div className={styles.emoji}>😢</div>
+          )}
           {state.selectedAnswer !== null &&
             !state.isCorrect &&
-            !state.showSadEmoji && (
+            !state.showSadEmoji &&
+            state.attemptsPerTask[currentTask.id] > 0 && (
               <button onClick={handleReset} className={styles.tryAgainButton}>
                 Try Again
               </button>
